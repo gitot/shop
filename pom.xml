@@ -7,12 +7,13 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <groupId>com.guyot.shopping</groupId>
     <artifactId>shopping</artifactId>
     <packaging>pom</packaging>
-    <version>1</version>
+    <version>1.0.0-SNAPSHOT</version>
     <modules>
         <module>shopping-basic</module>
-        <module>shopping-service-api</module>
-        <module>shopping-service-impl</module>
+        <module>shopping-api</module>
+        <module>shopping-svc</module>
         <module>shopping-common</module>
+        <module>shopping-portal</module>
     </modules>
 
     <properties>
@@ -22,15 +23,16 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
         <spring.cloud.version>Greenwich.RELEASE</spring.cloud.version>
         <fastjson.version>1.2.30</fastjson.version>
         <guava.version>28.2-jre</guava.version>
+        <swagger.version>2.9.2</swagger.version>
     </properties>
 
     <dependencies>
-        <!-- 集成commons工具类 -->
+        <!--commons utils -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
-        <!-- 集成lombok 框架 -->
+        <!-- lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -51,7 +53,18 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
         </dependency>
+        <!-- web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- eureka -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
     </dependencies>
+
 
     <dependencyManagement>
         <dependencies>
@@ -76,14 +89,30 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger2</artifactId>
-                <version>2.9.2</version>
+                <version>${swagger.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
-                <version>2.9.2</version>
+                <version>${swagger.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/libs-milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 </project>

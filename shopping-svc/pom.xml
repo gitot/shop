@@ -9,11 +9,11 @@
     </parent>
     <packaging>pom</packaging>
     <modules>
-        <module>shopping-common-core</module>
+        <module>shopping-svc-wechat</module>
     </modules>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>shopping-common</artifactId>
+    <artifactId>shopping-svc</artifactId>
 
 
 </project>

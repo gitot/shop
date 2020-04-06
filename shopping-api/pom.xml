@@ -7,13 +7,22 @@
         <artifactId>shopping</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
+    <artifactId>shopping-api</artifactId>
     <packaging>pom</packaging>
-    <modules>
-        <module>shopping-common-core</module>
-    </modules>
     <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>shopping-api-member</module>
+        <module>shopping-api-item</module>
+        <module>shopping-api-order</module>
+        <module>shopping-api-wechat</module>
+    </modules>
 
-    <artifactId>shopping-common</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+    </dependencies>
 
 
 </project>
