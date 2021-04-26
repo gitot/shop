@@ -4,16 +4,13 @@
 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.guyot.shopping</groupId>
-    <artifactId>shopping</artifactId>
+    <groupId>com.guyot.shop</groupId>
+    <artifactId>shop</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
     <modules>
-        <module>shopping-basic</module>
-        <module>shopping-api</module>
-        <module>shopping-svc</module>
-        <module>shopping-common</module>
-        <module>shopping-portal</module>
+        <module>shop-api</module>
+        <module>shop-svc</module>
     </modules>
 
     <properties>
@@ -40,12 +37,6 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-        </dependency>
-        <!-- fastjson -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>${fastjson.version}</version>
         </dependency>
         <!-- guava -->
         <dependency>
